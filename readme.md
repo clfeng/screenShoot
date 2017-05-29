@@ -81,3 +81,7 @@ addEvent(ele,'DOMMouseScroll',function (event){
 可能字丑了点（尴尬）
 
 ![screenshoot.jpg](http://upload-images.jianshu.io/upload_images/5834936-2d9a1c1e7adb0a4f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+完成后
+
+![image.png](http://upload-images.jianshu.io/upload_images/5834936-22ffad0bc64a6430.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
