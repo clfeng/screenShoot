@@ -84,4 +84,6 @@ addEvent(ele,'DOMMouseScroll',function (event){
 
 完成后
 
-![image.png](http://upload-images.jianshu.io/upload_images/5834936-22ffad0bc64a6430.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![finished.jpg](http://upload-images.jianshu.io/upload_images/5834936-04f376fb8a5a7aaf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
