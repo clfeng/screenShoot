@@ -77,6 +77,8 @@ function mouseDown(event){
     event = getEvent(event);
     stopDefault(event);
 
+
+
     let directionX = (event.clientX - mouseL)>0? true:false;
     let directionY = (event.clientY -mouseT)>0? true:false;
 
@@ -92,6 +94,8 @@ function mouseDown(event){
     }else if(!directionX && topImg.offsetLeft+topImg.offsetWidth < clipDiv.offsetLeft-100+clipDiv.offsetWidth ){
       changePlaceL(topImg.offsetLeft,clipDiv.offsetLeft-100+clipDiv.offsetWidth-topImg.offsetWidth,'left');
     }
+
+
     // 移除mousemove和mouseup事件
     removeEvent(contentLeft,"mousemove",mouseMove); 
     // removeEvent(contentLeft,"mouseup",mouseup);
@@ -135,6 +139,12 @@ addEvent(contentLeft,'DOMMouseScroll',function (event){
   if (event.detail>0) {
     stopDefault(event);
     scalSmall();
+    if (topImg.offsetTop<clipDiv.offsetTop) {
+      changePlaceT(topImg.offsetTop,clipDiv.offsetTop,'top');
+    }
+    if (topImg.offsetLeft<clipDiv.offsetLeft) {
+      changePlaceL(topImg.offsetLeft,clipDiv.offsetLeft,'left');
+    }
   }else if(event.deail<0){
     // 向下滚动
     stopDefault(event);
@@ -143,7 +153,7 @@ addEvent(contentLeft,'DOMMouseScroll',function (event){
 });
 
 
-// 点击save按钮保存图片，把图片展示出来，并且生生base64
+// 点击save按钮保存图片，把图片展示出来，并且生成base64
 addEvent(saveBtn,"click",function (){
   let rightImgStyle = window.getComputedStyle(rightImg,null),img,children;
   children = imgWrap.children;
@@ -181,8 +191,6 @@ addEvent(saveBtn,"click",function (){
 
 
 
-
-
 let scalClear;
 function scalSmall(){
   clearInterval(scalClear);
@@ -201,6 +209,7 @@ function scalSmall(){
         clip();
       }
     },20);
+
   }else{
    let oldW = topImg.offsetWidth,targetW = oldW * 0.95;
    scalClear = setInterval(function (){
