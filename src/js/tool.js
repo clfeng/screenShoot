@@ -50,6 +50,6 @@ let stopDefault = function (event){
   }
 }
 let getEvent = function (event){
-  return event || event.srcElement;
+  return event || window.event;
 }
 
